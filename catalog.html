@@ -21,7 +21,7 @@
             <a class="navigation-link" href="#about">О Седоне</a>
           </li>
           <li class="navigation-item">
-            <a class="navigation-link navigation-link-current" aria-current="page">Гостиницы</a>
+            <a class="navigation-link navigation-link-current" href="#" aria-current="page">Гостиницы</a>
           </li>
         </ul>
 
@@ -63,34 +63,50 @@
           <h2 class="visually-hidden">Фильтры поиска</h2>
           <fieldset class="search-form-field">
             <legend class="search-form-legend">Инфраструктура:</legend>
-            <label class="search-form-label">
-              <input class="search-form-input" type="checkbox" name="pool" checked>
-              Бассейн
-            </label>
-            <label class="search-form-label">
-              <input class="search-form-input" type="checkbox" name="parking" checked>
-              Парковка
-            </label>
-            <label class="search-form-label">
-              <input class="search-form-input" type="checkbox" name="wi-fi">
-              Wi-Fi
-            </label>
+            <ul class="search-form-list">
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="checkbox" name="pool" checked>
+                  Бассейн
+                </label>
+              </li>
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="checkbox" name="parking" checked>
+                  Парковка
+                </label>
+              </li>
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="checkbox" name="wi-fi">
+                  Wi-Fi
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset class="search-form-field">
             <legend class="search-form-legend">Тип жилья:</legend>
-            <label class="search-form-label">
-              <input class="search-form-input" type="radio" name="hotel-type" value="hotel" checked>
-              Гостиница
-            </label>
-            <label class="search-form-label">
-              <input class="search-form-input" type="radio" name="hotel-type" value="motel">
-              Мотель
-            </label>
-            <label class="search-form-label">
-              <input class="search-form-input" type="radio" name="hotel-type" value="apartment">
-              Апартаменты
-            </label>
+            <ul class="search-form-list">
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="radio" name="hotel-type" value="hotel" checked>
+                  Гостиница
+                </label>
+              </li>
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="radio" name="hotel-type" value="motel">
+                  Мотель
+                </label>
+              </li>
+              <li class="search-form-item">
+                <label class="search-form-label">
+                  <input class="search-form-input" type="radio" name="hotel-type" value="apartment">
+                  Апартаменты
+                </label>
+              </li>
+            </ul>
           </fieldset>
 
           <fieldset class="search-form-field">
