@@ -1,6 +1,6 @@
 # Личный проект «Седона»
 
-* Студент: [Marina Vasyukova](https://up.htmlacademy.ru/htmlcss-individual/3/user/2474201).
+* Студент: [Васюкова Марина](https://up.htmlacademy.ru/htmlcss-individual/3/user/2474201).
 * Наставник: [Андрей Грачев](https://htmlacademy.ru/profile/angra).
 * Сайт: [Мой проект Седона](https://marinemi.github.io/2474201-sedona-3/).
 
