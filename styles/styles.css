@@ -1,0 +1,656 @@
+/* stylelint-disable prettier/prettier */
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 400;
+  font-style: normal;
+  src: url("../fonts/ptsans-400.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-weight: 700;
+  font-style: normal;
+  src: url("../fonts/ptsans-700.woff2") format("woff2");
+  font-display: swap;
+}
+
+:root {
+  /* Шрифты */
+  --font-family: "PT Sans", sans-serif;
+
+  /* Текст */
+  --font-size-small: 16px;
+  --font-size-block: 18px;
+  --font-size-basic: 22px;
+  --font-size-phone: 40px;
+  --line-height-small: 21px;
+  --line-height-block: 21px;
+  --line-height-basic: 26px;
+  --line-height-phone: 40px;
+
+  /* Текст button, input */
+  --font-size-button-small: 16px;
+  --font-size-button-big: 20px;
+  --font-size-check: 18px;
+  --font-size-input: 18px;
+  --line-height-button-small: 20px;
+  --line-height-button-big: 36px;
+  --line-height-check: 23px;
+  --line-height-input: 24px;
+
+  /* Заголовки */
+  --font-size-h1: 60px;
+  --font-size-h2: 30px;
+  --font-size-h3: 24px;
+  --font-size-h4: 20px;
+  --line-height-h1: 78px;
+  --line-height-h2: 36px;
+  --line-height-h3: 28px;
+  --line-height-h4: 24px;
+
+  /* Палитра */
+  --white: #fff;
+  --white-60: rgb(255 255 255 / 60%);
+  --white-30: rgb(255 255 255 / 30%);
+  --black: #000;
+  --black-20: rgb(0 0 0 / 20%);
+  --black-30: rgb(0 0 0 / 30%);
+  --gray-dark: #333;
+  --gray-light: #e5e5e5;
+  --gray-bg: #f2f2f2;
+  --grey-blue: #3f5e72;
+  --blue: #82b3d3;
+  --blue-dark: #68a2ca;
+  --blue-dark-30: rgb(104 162 202 / 30%);
+  --blue-light: #83b3d3;
+  --blue-light-12: rgb(131 179 211 / 12%);
+  --blue-light-20: rgb(131 179 211 / 20%);
+  --brown: #756157;
+  --brown-30: rgb(117 97 87 / 30%);
+  --brown-dark: #615048;
+  --brown-light: #756257;
+  --green: #7db54f;
+  --green-dark: #6c9e42;
+  --red: #ff5757;
+
+  /* Цвет текста color */
+  --color-basic: var(--black);
+  --color-second: var(--gray-dark);
+  --color-error: var(--red);
+  --color-hover: var(--brown);
+  --color-active: var(--brown-30);
+  --color-bg-default: var(--white);
+  --color-bg-small: var(--white-30);
+  --color-bg-hover: var(--white-60);
+  --color-bg-active: var(--white-30);
+
+  /* Цвет фона background-color */
+  --bg-body: var(--gray-bg);
+  --bg-basic-1: var(--white);
+  --bg-basic-2: var(--black-30);
+  --bg-block-1: var(--blue);
+  --bg-block-2: var(--blue-light-12);
+  --bg-block-3: var(--blue-light-20);
+
+  /* Цвет фона кнопки */
+  --bg-button-basic: var(--brown);
+  --bg-button-basic-hover: var(--brown-dark);
+  --bg-button-second: var(--blue);
+  --bg-button-second-hover: var(--blue-dark);
+  --bg-button-select: var(--green);
+  --bg-button-select-hover: var(--green-dark);
+  --bg-button-disabled: var(--gray-light);
+  --border-focus: var(--blue-light);
+
+  /* Цвет form */
+  --bg-form-input: var(--grey-blue);
+  --bg-form-el-1: var(--gray-light);
+  --bg-form-el-2: var(--gray-bg);
+
+  /* Тени */
+  --shadow: var(--black-20);
+
+  /* Ссылка */
+  --link-current: var(--brown-light);
+
+  /* Цвет иконки */
+  --icon-fill-basic: var(--black);
+  --icon-fill-basic-hover: var(--brown);
+  --icon-fill-basic-active: var(--brown-30);
+  --icon-fill-second: var(--blue-light);
+  --icon-fill-second-hover: var(--blue-dark);
+  --icon-fill-second-active: var(--blue-dark-30);
+  --icon-badge-text: var(--green);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  /* Общие стили */
+  font-family: var(--font-family);
+  font-size: var(--font-size-basic);
+  line-height: var(--line-height-basic);
+  color: var(--color-basic);
+  background-color: var(--bg-body);
+
+  /* Отступ для тени */
+  margin: 0;
+  padding: 0 40px;
+}
+
+/* Тень страницы */
+.page-shadow {
+  background: var(--white);
+  box-shadow: 0 0 15px var(--shadow);
+}
+
+/* Buttons - общее */
+.button-small,
+.button-big {
+  font-family: inherit;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 4px;
+  border: none;
+  color: var(--color-bg-default);
+  padding: 8px 16px;
+}
+
+.button-small {
+  font-size: var(--font-size-button-small);
+  line-height: var(--line-height-button-small);
+}
+
+.button-big {
+  font-size: var(--font-size-button-big);
+  line-height: var(--line-height-button-big);
+}
+
+.button-small:active,
+.button-big:active {
+  color: var(--color-bg-small);
+}
+
+.button-primary {
+  background-color: var(--bg-button-basic);
+}
+
+.button-primary:hover {
+  background-color: var(--bg-button-basic-hover);
+}
+
+.button-secondary {
+  background-color: var(--bg-button-second);
+}
+
+.button-secondary:hover {
+  background-color: var(--bg-button-second-hover);
+}
+
+.button-selected {
+  background-color: var(--bg-button-select);
+}
+
+.button-selected:hover {
+  background-color: var(--bg-button-select-hover);
+}
+
+.button-ghost {
+  background-color: transparent;
+}
+
+.button-ghost:hover {
+  color: var(--color-bg-hover);
+}
+
+.button-ghost:focus {
+  border: 3px solid var(--border-focus);
+}
+
+.button-disabled {
+  background-color: var(--bg-form-el-1);
+}
+
+/* Header */
+.page-header {
+  padding: 0 70px;
+  margin: 0;
+}
+
+.navigation-list {
+  list-style: none;
+  margin: 14px 0;
+  padding: 0;
+}
+
+.navigation-link {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 700;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+.navigation-link-current {
+  text-decoration-line: underline;
+  text-decoration-color: var(--link-current);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 21px;
+}
+
+.navigation-btn-link {
+  padding-left: 34px;
+  padding-right: 34px;
+}
+
+/* Footer */
+.page-footer {
+  text-align: center;
+  padding: 40px 70px 30px;
+  padding-bottom: 35px;
+}
+
+.contacts-social-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contacts-phone {
+  font-size: var(--font-size-phone);
+  line-height: var(--line-height-phone);
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* Главная страница */
+.main-index {
+  text-align: center;
+}
+
+/* Hero  */
+.index-hero {
+  background-color: var(--bg-block-3);
+  background-image:
+    url("../images/background/welcome-background-mask.svg"),
+    url("../images/background/welcome-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%, cover;
+  background-position: bottom, center;
+  padding: 51px 0 82px;
+  margin: 0 0 19px;
+}
+
+/* Заголовок и описание секций */
+.preview {
+  padding: 50px 70px;
+  margin: 0;
+}
+
+.preview-title {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0 0 25px;
+}
+
+.preview-description {
+  line-height: var(--line-height-basic);
+  color: var(--color-second);
+  margin: 0;
+}
+
+/* Блок - Преимущества */
+.advantages {
+  padding: 0;
+  margin: 0 0 14px;
+}
+
+.advantages-list {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+}
+
+.block-1 {
+  background-color: var(--bg-block-1);
+  color: var(--color-bg-default);
+}
+
+.block-2 {
+  background-color: var(--bg-block-2);
+}
+
+.block-3 {
+  background-color: var(--bg-block-3);
+}
+
+.advantages-title {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 0 0 30px;
+}
+
+.advantages-description {
+  font-size: var(--font-size-block);
+  line-height: var(--line-height-block);
+  padding: 30px 0 0;
+  margin: 0;
+}
+
+.advantages-img {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* Блок - Инфраструктура */
+.infrastructure {
+  padding: 0;
+  margin: 0 0 46px;
+}
+
+.infrastructure-list {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.infrastructure-title {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0;
+  margin: 30px 0;
+}
+
+.infrastructure-description {
+  font-size: var(--font-size-block);
+  line-height: var(--line-height-block);
+  padding: 0;
+  margin: 0;
+}
+
+.advantages-container,
+.infrastructure-item {
+  min-height: 385px;
+  padding: 80px 85px;
+}
+
+/* Блок - Поиск */
+.search {
+  padding: 0;
+  margin: 0 0 96px;
+}
+
+.search-button {
+  margin: 4px 0 0;
+}
+
+/* Блок - Подписка */
+.subscribe {
+  padding: 46px 0 104px;
+  margin: 0;
+  text-align: center;
+}
+
+.subscribe-bg {
+  background-color: var(--bg-block-3);
+  background-image: url("../images/background/subscribe-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: var(--color-bg-default);
+}
+
+.subscribe-bg-preview {
+  color: var(--color-bg-default);
+}
+
+.subscribe-form {
+  margin: 5px 0 0;
+}
+
+.subscribe-email {
+  background-color: var(--bg-form-el-2);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  padding: 12px 20px;
+  border-radius: 4px 0 0 4px;
+  border-style: none;
+  height: 100%;
+}
+
+.subscribe-button {
+  border-radius: 0 4px 4px 0;
+}
+
+/* Страница Каталог */
+.catalog-search {
+  color: var(--color-bg-default);
+  background-color: var(--bg-block-3);
+  background-image: url("../images/background/filter-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  padding-top: 35px;
+  padding-bottom: 70px;
+}
+
+.search-header {
+  padding: 0 70px;
+}
+
+.catalog-title {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-h1);
+  font-weight: 700;
+  margin: 0 0 8px;
+  padding: 0;
+}
+
+/* Хлебные крошки */
+.breadcrumbs {
+  margin: 0 0 40px;
+}
+
+.breadcrumbs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.breadcrumbs-link {
+  color: inherit;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+/* Форма - Поиск гостиницы по фильтрам */
+.search-form {
+  padding: 0 70px;
+}
+
+.search-form-field {
+  margin: 0;
+  padding: 0;
+}
+
+.search-form-legend {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 700;
+  margin: 0 0 32px;
+}
+
+.search-form-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.search-form-name {
+  font-size: var(--font-size-check);
+  line-height: var(--line-height-check);
+}
+
+.search-form-number {
+  color: var(--color-second);
+  background-color: var(--bg-form-el-2);
+  padding: 12px 20px 12px 0;
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+}
+
+.search-form-number-input {
+  background-color: var(--bg-form-el-2);
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  font-weight: 700;
+  border-style: none;
+  padding: 12px 0 12px 20px;
+  width: 100px;
+  height: 100%;
+}
+
+.price-start {
+  border-radius: 4px 0 0 4px;
+  margin-right: 2px;
+}
+
+.price-end {
+  border-radius: 0 4px 4px 0;
+}
+
+/* Блок - Результаты поиска */
+.search-result {
+  padding: 50px 70px 60px;
+}
+
+/* Header блока - Результаты поиска */
+.result-title {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+  padding: 0 0 30px;
+}
+
+.search-result-header,
+.search-result-list {
+  margin: 0 0 40px;
+}
+
+.result-view-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.result-sort {
+  color: var(--color-second);
+  font-size: var(--font-size-block);
+  line-height: var(--line-height-block);
+  border: 2px solid var(--bg-form-el-1);
+  background-color: var(--bg-basic-1);
+  border-radius: 4px;
+  padding: 14px 20px;
+  width: 292px;
+}
+
+/* Блок карточек отелей */
+.search-result-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hotel-card {
+  border: 1px solid var(--bg-form-el-1);
+  padding: 20px;
+  max-width: 340px;
+  width: 100%;
+}
+
+.hotel-title {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-h3);
+  font-weight: 700;
+  margin: 0 0 16px;
+}
+
+.hotel-image,
+.hotel-card-description,
+.hotel-card-action {
+  margin: 0 0 16px;
+}
+
+.hotel-card-rating {
+  margin: 0;
+}
+
+.hotel-about,
+.hotel-add-favorite,
+.hotel-delete-favorite,
+.hotel-user-rating {
+  display: inline-block;
+  padding: 8px;
+  width: 140px;
+}
+
+.hotel-user-rating {
+  font-size: var(--font-size-button-small);
+  line-height: var(--line-height-button-small);
+  font-weight: 400;
+  color: var(--color-second);
+  background-color: var(--bg-form-el-1);
+  text-align: center;
+  text-transform: uppercase;
+  border-radius: 4px;
+}
+
+.hotel-image {
+  display: block;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.pagination {
+  margin: 40px 0 60px;
+}
+
+.pagination-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.pagination-link {
+  width: 60px;
+  height: 60px;
+}
+
+.pagination-next {
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
