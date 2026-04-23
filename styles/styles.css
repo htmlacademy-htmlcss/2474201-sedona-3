@@ -1,4 +1,3 @@
-/* stylelint-disable prettier/prettier */
 @font-face {
   font-family: "PT Sans";
   font-weight: 400;
@@ -50,24 +49,24 @@
   --line-height-h4: 24px;
 
   /* Палитра */
-  --white: #fff;
-  --white-60: rgb(255 255 255 / 60%);
-  --white-30: rgb(255 255 255 / 30%);
-  --black: #000;
-  --black-20: rgb(0 0 0 / 20%);
-  --black-30: rgb(0 0 0 / 30%);
-  --gray-dark: #333;
+  --white: #ffffff;
+  --white-60: rgba(255, 255, 255, 0.6);
+  --white-30: rgba(255, 255, 255, 0.3);
+  --black: #000000;
+  --black-20: rgba(0, 0, 0, 0.2);
+  --black-30: rgba(0, 0, 0, 0.3);
+  --gray-dark: #333333;
   --gray-light: #e5e5e5;
   --gray-bg: #f2f2f2;
   --grey-blue: #3f5e72;
   --blue: #82b3d3;
   --blue-dark: #68a2ca;
-  --blue-dark-30: rgb(104 162 202 / 30%);
+  --blue-dark-30: rgba(104, 162, 202, 0.3);
   --blue-light: #83b3d3;
-  --blue-light-12: rgb(131 179 211 / 12%);
-  --blue-light-20: rgb(131 179 211 / 20%);
+  --blue-light-12: rgba(131, 179, 211, 0.12);
+  --blue-light-20: rgba(131, 179, 211, 0.2);
   --brown: #756157;
-  --brown-30: rgb(117 97 87 / 30%);
+  --brown-30: rgba(117, 97, 87, 0.3);
   --brown-dark: #615048;
   --brown-light: #756257;
   --green: #7db54f;
@@ -211,10 +210,6 @@ body {
   color: var(--color-bg-hover);
 }
 
-.button-ghost:focus {
-  border: 3px solid var(--border-focus);
-}
-
 .button-disabled {
   background-color: var(--bg-form-el-1);
 }
@@ -280,7 +275,7 @@ body {
 
 /* Hero  */
 .index-hero {
-  background-color: var(--bg-block-3);
+  background-color: var(--bg-form-input);
   background-image:
     url("../images/background/welcome-background-mask.svg"),
     url("../images/background/welcome-background.jpg");
@@ -412,7 +407,7 @@ body {
 }
 
 .subscribe-bg {
-  background-color: var(--bg-block-3);
+  background-color: var(--bg-form-input);
   background-image: url("../images/background/subscribe-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -429,13 +424,14 @@ body {
 }
 
 .subscribe-email {
-  background-color: var(--bg-form-el-2);
+  font-family: inherit;
   font-size: var(--font-size-input);
   line-height: var(--line-height-input);
-  padding: 12px 20px;
+  background-color: var(--bg-form-el-2);
+  padding: 0 20px;
   border-radius: 4px 0 0 4px;
   border-style: none;
-  height: 100%;
+  height: 52px;
 }
 
 .subscribe-button {
@@ -445,7 +441,7 @@ body {
 /* Страница Каталог */
 .catalog-search {
   color: var(--color-bg-default);
-  background-color: var(--bg-block-3);
+  background-color: var(--bg-form-input);
   background-image: url("../images/background/filter-background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
@@ -519,12 +515,18 @@ body {
   line-height: var(--line-height-input);
 }
 
+.search-form-input {
+  width: 20px;
+  height: 20px;
+}
+
 .search-form-number-input {
-  background-color: var(--bg-form-el-2);
+  font-family: inherit;
   font-size: var(--font-size-input);
   line-height: var(--line-height-input);
   font-weight: 700;
   border-style: none;
+  background-color: var(--bg-form-el-2);
   padding: 12px 0 12px 20px;
   width: 100px;
   height: 100%;
@@ -590,11 +592,21 @@ body {
   width: 100%;
 }
 
+.hotel-card-link {
+  color: inherit;
+  text-decoration: none;
+}
+
 .hotel-title {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
   font-weight: 700;
   margin: 0 0 16px;
+}
+
+.hotel-card-description {
+  font-size: var(--font-size-block);
+  line-height: var(--line-height-block);
 }
 
 .hotel-image,
