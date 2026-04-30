@@ -132,8 +132,11 @@
                 </label>
               </fieldset>
 
-              <button class="search-form-button button-small button-secondary" type="submit">Применить</button>
-              <button class="search-form-reset button-small button-ghost" type="reset">Сбросить</button>
+              <fieldset class="search-form-field field-button">
+                <legend class="visually-hidden">Действия с фильтрами</legend>
+                <button class="search-form-button button-small button-secondary" type="submit">Применить</button>
+                <button class="search-form-reset button-small button-ghost" type="reset">Сбросить</button>
+              </fieldset>
             </div>
           </form>
         </section>
@@ -141,7 +144,7 @@
         <section class="search-result">
           <h2 class="visually-hidden">Результаты поиска</h2>
 
-          <header class="search-result-header">
+          <header class="search-result-header search-result-container">
             <p class="result-title">
               Найдено гостиниц:
               <span class="result-count">38</span>
@@ -175,7 +178,7 @@
             </div>
           </header>
 
-          <ul class="search-result-list" data-test="catalog">
+          <ul class="search-result-list search-result-container" data-test="catalog">
             <li class="search-result-item hotel-card">
               <a class="hotel-card-link" href="#hotel">
                 <img class="hotel-image" src="images/content/hotels/hotel-1.jpg" width="300" height="212"
