@@ -12,7 +12,7 @@
       <header class="page-header" data-test="header">
         <nav class="navigation" aria-label="navigation">
           <a class="navigation-logo" href="index.html">
-            <img class="navigation-logo-img" src="images/content/logo.svg" width="138" height="64"
+            <img class="navigation-logo-img" src="images/content/logo.svg" width="140" height="70"
               alt="Логотип города Седона">
           </a>
 
@@ -28,20 +28,20 @@
             </li>
           </ul>
 
-          <ul class="navigation-list list navigation-user">
-            <li class="navigation-user-item">
+          <ul class="navigation-user-list">
+            <li class="navigation-user-icon">
               <a class="navigation-link icon-search" href="#search">
                 <span class="visually-hidden">Поиск</span>
               </a>
             </li>
-            <li class="navigation-user-item">
+            <li class="navigation-user-icon">
               <a class="navigation-link icon-favorite" href="#favorite">
                 <span class="visually-hidden">Отелей в избранном</span>
                 <span class="notification-badge">12</span>
               </a>
             </li>
             <li class="navigation-user-item">
-              <a class="navigation-user-link button-small button-primary" href="#link">Хочу сюда!</a>
+              <a class="navigation-btn-link button-small button-primary" href="#link">Хочу сюда!</a>
             </li>
           </ul>
         </nav>
@@ -70,7 +70,7 @@
             <h2 class="visually-hidden">Фильтры поиска</h2>
 
             <div class="search-form-group">
-              <fieldset class="search-form-field">
+              <fieldset class="search-form-field-col">
                 <legend class="search-form-legend">Инфраструктура:</legend>
                 <ul class="search-form-list">
                   <li class="search-form-item">
@@ -94,7 +94,7 @@
                 </ul>
               </fieldset>
 
-              <fieldset class="search-form-field">
+              <fieldset class="search-form-field-col">
                 <legend class="search-form-legend">Тип жилья:</legend>
                 <ul class="search-form-list list">
                   <li class="search-form-item">
@@ -120,7 +120,7 @@
             </div>
 
             <div class="search-form-group">
-              <fieldset class="search-form-field">
+              <fieldset class="search-form-field-row">
                 <legend class="search-form-legend">Стоимость,&nbsp;₽:</legend>
                 <label class="search-form-number price-start">
                   <input class="search-form-number-input price-start" type="number" name="priceStart" value="0">
@@ -132,7 +132,7 @@
                 </label>
               </fieldset>
 
-              <fieldset class="search-form-field field-button">
+              <fieldset class="search-form-field-col field-button">
                 <legend class="visually-hidden">Действия с фильтрами</legend>
                 <button class="search-form-button button-small button-secondary" type="submit">Применить</button>
                 <button class="search-form-reset button-small button-ghost" type="reset">Сбросить</button>
@@ -141,7 +141,7 @@
           </form>
         </section>
 
-        <section class="search-result">
+        <section class="search-result" data-test="catalog">
           <h2 class="visually-hidden">Результаты поиска</h2>
 
           <header class="search-result-header search-result-container">
@@ -151,34 +151,35 @@
             </p>
 
             <div class="sort-container">
-              <select class="result-sort" aria-label="Сортировка">
-                <option value="cheap">Сначала дешевые</option>
-                <option value="expensive">Сначала дорогие</option>
-                <option value="popular">Сначала популярные</option>
-              </select>
+              <label class="visually-hidden" for="sort-select">Сортировка</label>
+                <select class="result-sort" id="sort-select" name="sort">
+                  <option value="cheap">Сначала дешевые</option>
+                  <option value="expensive">Сначала дорогие</option>
+                  <option value="popular">Сначала популярные</option>
+                </select>
 
-              <ul class="result-view-list" role="group" aria-label="Вариант отображения">
-                <li class="result-view-item">
-                  <a class="result-view-icon-tile result-view-current" href="catalog.html?view=tile"
-                    aria-current="page">
-                    <span class="visually-hidden">Показать плиткой</span>
-                  </a>
-                </li>
-                <li class="result-view-item">
-                  <a class="result-view-icon-card" href="catalog.html?view=card">
-                    <span class="visually-hidden">Показать карточками</span>
-                  </a>
-                </li>
-                <li class="result-view-item">
-                  <a class="result-view-icon-list" href="catalog.html?view=list">
-                    <span class="visually-hidden">Показать списком</span>
-                  </a>
-                </li>
-              </ul>
+                <ul class="result-view-list" role="group" aria-label="Вариант отображения">
+                  <li class="result-view-item view-item-current">
+                    <a class="result-view-icon-tile result-view-current" href="catalog.html?view=tile"
+                      aria-current="page">
+                      <span class="visually-hidden">Показать плиткой</span>
+                    </a>
+                  </li>
+                  <li class="result-view-item">
+                    <a class="result-view-icon-card" href="catalog.html?view=card">
+                      <span class="visually-hidden">Показать карточками</span>
+                    </a>
+                  </li>
+                  <li class="result-view-item">
+                    <a class="result-view-icon-list" href="catalog.html?view=list">
+                      <span class="visually-hidden">Показать списком</span>
+                    </a>
+                  </li>
+                </ul>
             </div>
           </header>
 
-          <ul class="search-result-list search-result-container" data-test="catalog">
+          <ul class="search-result-list search-result-container">
             <li class="search-result-item hotel-card">
               <a class="hotel-card-link" href="#hotel">
                 <img class="hotel-image" src="images/content/hotels/hotel-1.jpg" width="300" height="212"
@@ -309,10 +310,12 @@
           </footer>
         </section>
 
-        <section class="subscribe page-container" data-test="subscribe">
-          <div class="preview">
+        <section class="subscribe" data-test="subscribe">
+          <div class="subscribe-preview">
             <h2 class="preview-title">Подпишитесь на рассылку</h2>
-            <p class="preview-description">Только полезная информация и никакого спама, честное бойскаутское!</p>
+            <p class="preview-description subscribe-bg-preview">Только полезная информация и никакого
+              спама,<br>честное
+              бойскаутское!</p>
           </div>
 
           <form class="subscribe-form" action="https://echo.htmlacademy.ru/" method="post">
@@ -322,23 +325,24 @@
             <button class="subscribe-button button-big button-secondary" type="submit">Подписаться</button>
           </form>
         </section>
+
       </main>
 
-      <footer class="page-footer page-container" data-test="footer">
+      <footer class="page-footer " data-test="footer">
         <h2 class="visually-hidden">Контакты</h2>
 
-        <ul class="contacts-social-list list">
-          <li class="social-item">
+        <ul class="contacts-social-list">
+          <li class="social-icon">
             <a class="social-link icon-vk" href="https://vk.com/htmlacademy">
               <span class="visually-hidden">ВКонтакте</span>
             </a>
           </li>
-          <li class="social-item">
+          <li class="social-icon">
             <a class="social-link icon-tg" href="https://t.me/htmlacademy">
               <span class="visually-hidden">Telegram</span>
             </a>
           </li>
-          <li class="social-item">
+          <li class="social-icon">
             <a class="social-link icon-youtube" href="https://www.youtube.com/user/htmlacademyru">
               <span class="visually-hidden">Youtube</span>
             </a>

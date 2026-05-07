@@ -144,15 +144,25 @@ body {
   height: 100%;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+}
+
 /* Тень страницы */
 .page-shadow {
   background: var(--white);
   box-shadow: 0 0 15px var(--shadow);
   margin: 0 auto;
+  min-height: 100%;
+  max-width: 1200px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-  width: 1200px;
 }
 
 /* Buttons - общее */
@@ -167,19 +177,18 @@ body {
   border-radius: 4px;
   border: none;
   color: var(--color-bg-default);
-  padding: 8px 16px;
 }
 
 .button-small {
   font-size: var(--font-size-button-small);
   line-height: var(--line-height-button-small);
-  height: 36px;
+  padding: 8px 16px;
 }
 
 .button-big {
   font-size: var(--font-size-button-big);
   line-height: var(--line-height-button-big);
-  height: 52px;
+  padding: 8px 50px;
 }
 
 .button-small:active,
@@ -226,17 +235,30 @@ body {
 /* Header */
 .navigation {
   display: flex;
-  margin: 0 70px;
+  padding: 14px 70px;
+  gap: 0 30px;
+}
+
+.navigation-logo {
+  position: relative;
+  width: 140px;
+  flex-shrink: 0;
+}
+
+.navigation-logo-img {
+  position: absolute;
+  top: -14px;
 }
 
 .navigation-list {
   list-style: none;
-  margin: 14px 0;
+  margin: 0;
   padding: 0;
-}
-
-.navigation-user {
-  margin-left: auto;
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 32px;
 }
 
 .navigation-link {
@@ -244,7 +266,6 @@ body {
   line-height: var(--line-height-h4);
   font-weight: 700;
   color: inherit;
-  text-align: center;
   text-decoration: none;
 }
 
@@ -255,24 +276,80 @@ body {
   text-underline-offset: 21px;
 }
 
+.navigation-user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  min-width: 268px;
+  flex-shrink: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.navigation-user-icon {
+  width: 44px;
+  height: 100%;
+  padding: 0 12px;
+  flex-shrink: 0;
+}
+
+.navigation-user-item {
+  margin-left: 20px;
+}
+
 .navigation-btn-link {
   padding-left: 34px;
   padding-right: 34px;
 }
 
+.icon-favorite {
+  display: block;
+  position: relative;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -3px;
+  right: -7px;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 10px;
+  background-color: var(--icon-badge-text);
+  color: var(--color-bg-default);
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  text-align: center;
+  padding: 5px 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
 /* Footer */
 .page-footer {
-  text-align: center;
-  padding: 40px 70px 30px;
-  padding-bottom: 35px;
+  padding: 40px 70px 35px;
   display: flex;
-  justify-content: space-between;
+  align-items: center;
 }
 
 .contacts-social-list {
   list-style: none;
   margin: 0;
   padding: 0;
+  width: 142px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.social-icon {
+  width: 47px;
+  padding: 0 12px;
+}
+
+.contacts-htmlacademy-icon {
   width: 142px;
 }
 
@@ -304,15 +381,9 @@ body {
   background-size: 100%, cover;
   background-position: bottom, center;
   padding: 51px 0 82px;
-  margin: 0 0 19px;
 }
 
 /* Заголовок и описание секций */
-.preview {
-  padding: 50px 70px;
-  margin: 0;
-}
-
 .preview-title {
   font-size: var(--font-size-h2);
   line-height: var(--line-height-h2);
@@ -329,38 +400,39 @@ body {
 }
 
 /* Блок - Преимущества */
-.advantages {
-  padding: 0;
-  margin: 0 0 14px;
+.advantages-preview {
+  padding: 69px 70px 90px;
 }
 
 .advantages-list {
   list-style: none;
-  margin: 40px 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
-.advantages-container,
+.advantages-item,
 .infrastructure-item {
   width: 400px;
   min-height: 385px;
-  padding: 80px 85px;
+  padding: 40px 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.block-1 {
+.bg-dark {
   background-color: var(--bg-block-1);
   color: var(--color-bg-default);
   display: flex;
 }
 
-.block-2 {
+.bg-light {
   background-color: var(--bg-block-2);
 }
 
-.block-3 {
+.bg-medium {
   background-color: var(--bg-block-3);
 }
 
@@ -376,27 +448,33 @@ body {
 .advantages-description {
   font-size: var(--font-size-block);
   line-height: var(--line-height-block);
-  padding: 30px 0 0;
-  margin: 0;
+  margin: 30px 0 0;
+}
+
+.advantages-container {
+  display: flex;
+  width: 100%;
 }
 
 .advantages-img {
   display: block;
+  width: 100%;
+  max-width: 800px;
+  height: 100%;
   object-fit: cover;
-  max-width: 100%;
 }
 
 /* Блок - Инфраструктура */
-.infrastructure {
-  padding: 0;
-  margin: 0 0 46px;
+.infrastructure-preview {
+  padding: 64px 70px;
 }
 
 .infrastructure-list {
   list-style: none;
-  margin: 14px 0 0;
+  margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
 }
 
 .infrastructure-title {
@@ -417,23 +495,26 @@ body {
 
 /* Блок - Поиск */
 .search {
-  padding: 0;
-  margin: 0 0 96px;
+  padding: 96px 70px;
 }
 
-.search-button {
-  margin: 4px 0 0;
+.search-preview {
+  margin-bottom: 54px;
 }
 
 /* Блок - Подписка */
 .subscribe {
-  padding: 46px 0 104px;
-  margin: 0;
+  padding: 96px 70px 104px;
   text-align: center;
 }
 
+.subscribe-preview {
+  margin-bottom: 54px;
+}
+
 .subscribe-form {
-  margin: 5px 0 0;
+  display: flex;
+  justify-content: center;
 }
 
 .subscribe-email {
@@ -444,7 +525,7 @@ body {
   padding: 0 20px;
   border-radius: 4px 0 0 4px;
   border-style: none;
-  height: 52px;
+  width: 452px;
 }
 
 .subscribe-button {
@@ -472,12 +553,7 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  padding-top: 35px;
-  padding-bottom: 70px;
-}
-
-.search-header {
-  padding: 0 70px;
+  padding: 35px 70px 70px;
 }
 
 .catalog-title {
@@ -485,7 +561,6 @@ body {
   line-height: var(--line-height-h1);
   font-weight: 700;
   margin: 0 0 8px;
-  padding: 0;
 }
 
 /* Хлебные крошки */
@@ -507,21 +582,25 @@ body {
 
 /* Форма - Поиск гостиницы по фильтрам */
 .search-form {
-  padding: 0 70px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 70px;
 }
 
 .search-form-group {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 70px;
 }
 
-.search-form-field {
+.search-form-field-col {
   border: none;
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .search-form-legend {
@@ -535,22 +614,41 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .search-form-name {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   font-size: var(--font-size-check);
   line-height: var(--line-height-check);
 }
 
+.search-form-field-row {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+}
+
 .search-form-number {
+  display: flex;
+  align-items: center;
+  width: 143px;
   color: var(--color-second);
   background-color: var(--bg-form-el-2);
-  padding: 12px 20px 12px 0;
+  padding: 0;
   font-size: var(--font-size-input);
   line-height: var(--line-height-input);
 }
 
 .search-form-input {
+  margin: 0;
   width: 20px;
   height: 20px;
 }
@@ -576,7 +674,14 @@ body {
 }
 
 .field-button {
-  align-self: center;
+  align-self: flex-end;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.search-form-button {
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* Блок - Результаты поиска */
@@ -588,6 +693,7 @@ body {
   margin: 0 0 40px;
   display: flex;
   justify-content: space-between;
+  gap: 70px;
 }
 
 /* Header блока - Результаты поиска */
@@ -597,18 +703,22 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   margin: 0;
-  padding: 0 0 30px;
 }
 
 .sort-container {
   display: flex;
-  gap: 0 70px;
+  align-items: flex-start;
+  gap: 70px;
 }
 
 .result-view-list {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .result-sort {
@@ -618,17 +728,28 @@ body {
   border: 2px solid var(--bg-form-el-1);
   background-color: var(--bg-basic-1);
   border-radius: 4px;
-  padding: 14px 20px;
+  padding: 12px 20px;
   width: 292px;
+}
+
+.result-view-item {
+  border: 2px solid var(--bg-form-el-1);
+  background-color: var(--bg-basic-1);
+  border-radius: 4px;
+  width: 48px;
+  height: 48px;
+}
+
+.view-item-current {
+  border-color: var(--color-basic);
 }
 
 /* Блок карточек отелей */
 .search-result-list {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 40px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   gap: 20px;
 }
@@ -636,42 +757,52 @@ body {
 .hotel-card {
   border: 1px solid var(--bg-form-el-1);
   padding: 20px;
-  width: 340px;
+  width: 100%;
+  max-width: 340px;
   min-height: 438px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .hotel-card-link {
   color: inherit;
   text-decoration: none;
+  flex-grow: 1;
 }
 
 .hotel-image {
   display: block;
   object-fit: cover;
   width: 100%;
-  height: auto%;
+  height: auto;
+  margin-bottom: 16px;
 }
 
 .hotel-title {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
   font-weight: 700;
-  margin: 0 0 16px;
+  margin: 0;
 }
 
 .hotel-card-description {
+  margin: 0;
   font-size: var(--font-size-block);
   line-height: var(--line-height-block);
+  display: flex;
+  justify-content: space-between;
 }
 
-.hotel-image,
-.hotel-card-description,
 .hotel-card-action {
-  margin: 0 0 16px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hotel-card-rating {
   margin: 0;
+  display: flex;
+  justify-content: space-between;
 }
 
 .hotel-about,
@@ -694,7 +825,7 @@ body {
   border-radius: 4px;
 }
 
-.pagination {
+.search-result-pagination {
   margin: 40px 0 60px;
 }
 
@@ -703,12 +834,20 @@ body {
   padding: 0;
   margin: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
 }
 
-.pagination-link {
+.pagination-item {
   width: 60px;
-  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+
+.pagination-link {
+  width: 100%;
+  height: 100%;
+  padding: 12px 0;
 }
 
 .pagination-next {
