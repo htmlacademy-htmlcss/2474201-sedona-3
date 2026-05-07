@@ -674,7 +674,7 @@ body {
 }
 
 .field-button {
-  align-self: flex-end;
+  justify-content: flex-end;
   flex-direction: column;
   gap: 30px;
 }
@@ -696,7 +696,7 @@ body {
   gap: 70px;
 }
 
-/* Header блока - Результаты поиска */
+/* Header блока - Результаты поиска, сортировка, вид*/
 .result-title {
   font-size: var(--font-size-h3);
   line-height: var(--line-height-h3);
@@ -749,8 +749,8 @@ body {
   list-style: none;
   padding: 0;
   margin: 0 0 40px;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 340px);
   gap: 20px;
 }
 
@@ -758,7 +758,6 @@ body {
   border: 1px solid var(--bg-form-el-1);
   padding: 20px;
   width: 100%;
-  max-width: 340px;
   min-height: 438px;
   display: flex;
   flex-direction: column;
@@ -792,17 +791,20 @@ body {
   line-height: var(--line-height-block);
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .hotel-card-action {
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .hotel-card-rating {
   margin: 0;
   display: flex;
   justify-content: space-between;
+  gap: 20px;
 }
 
 .hotel-about,
