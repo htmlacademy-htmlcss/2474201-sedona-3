@@ -110,6 +110,8 @@
 
   /* Тени */
   --shadow: var(--black-20);
+  --toggle-25: rgba(0, 0, 0, 0.25);
+  --toggle-40: rgba(0, 0, 0, 0.4);
 
   /* Ссылка */
   --link-current: var(--brown-light);
@@ -153,8 +155,10 @@ body {
   width: 1px;
   height: 1px;
   margin: -1px;
+  padding: 0;
+  border: 0;
+  clip: rect(0 0 0 0);
   overflow: hidden;
-  clip: rect(0, 0, 0, 0);
 }
 
 /* Тень страницы */
@@ -284,7 +288,6 @@ body {
   text-decoration: none;
   display: block;
   padding: 20px 16px;
-  margin-left: 0.5px;
   position: relative;
 }
 
@@ -292,7 +295,7 @@ body {
   text-decoration-line: underline;
   text-decoration-color: var(--link-current);
   text-decoration-thickness: 2px;
-  text-underline-offset: 24px;
+  text-underline-offset: 23px;
 }
 
 .navigation-link:hover,
@@ -815,14 +818,6 @@ body {
   gap: 16px;
 }
 
-.search-form-item:hover {
-  opacity: 60%;
-}
-
-.search-form-item:active {
-  opacity: 30%;
-}
-
 .search-form-name {
   display: flex;
   align-items: center;
@@ -836,14 +831,62 @@ body {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
-  align-items: start;
 }
 
 .search-form-input {
   margin: 0;
   width: 20px;
   height: 20px;
+  background-color: var(--bg-basic-1);
+}
+
+.input-checkbox {
+  border-radius: 4px;
+}
+
+.control-input[type="checkbox"]:checked + .search-form-input {
+  background-image: url("../images/icons/control-checkbox.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  display: block;
+}
+
+.input-radio {
+  border-radius: 50%;
+}
+
+.control-input[type="radio"]:checked + .search-form-input {
+  background-image: url("../images/icons/control-radio.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  display: block;
+}
+
+.search-form-name:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+
+.control-input:focus-visible + .search-form-input {
+  border: 3px solid var(--border-focus);
+}
+
+.search-form-item:active {
+  opacity: 30%;
+}
+
+.search-form-item:has(.control-input:disabled) {
+  opacity: 30%;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.range-wrapper-inputs {
+  display: flex;
 }
 
 .search-form-number {
@@ -892,6 +935,53 @@ body {
 
 .price-end {
   border-radius: 0 4px 4px 0;
+}
+
+.range-scale {
+  position: relative;
+  height: 4px;
+  margin-top: 42px;
+  background-color: var(--white-30);
+}
+
+.range-bar {
+  position: absolute;
+  height: 4px;
+  width: 226px;
+  background-color: var(--bg-basic-1);
+}
+
+.range-toggle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--bg-basic-1);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.range-toggle:hover {
+  box-shadow: 0 4px 10px 0 var(--toggle-25);
+}
+
+.range-toggle:focus {
+  box-shadow: 0 4px 10px 0 var(--toggle-25);
+  outline: 3px solid var(--border-focus);
+}
+
+.range-toggle:active {
+  box-shadow: 0 7px 15px 0 var(--toggle-40);
+  outline: 2px solid var(--border-focus);
+}
+
+.toggle-min {
+  top: -8px;
+}
+
+.toggle-max {
+  top: -8px;
+  left: 206px;
 }
 
 .field-button {
@@ -971,7 +1061,6 @@ body {
 
 .result-sort:hover,
 .result-sort:focus-visible {
-  background-color: var(--color-basic);
   border: 2px solid var(--bg-button-second-hover);
 }
 
@@ -1148,3 +1237,59 @@ body {
   text-align: center;
   text-decoration: none;
 }
+
+/* .modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal {
+  position: relative;
+  margin: auto;
+  padding: 40px;
+  background-color: #ffffff;
+}
+
+.modal-auth {
+  width: 360px;
+}
+
+.modal-close-button {
+  position: absolute;
+  padding: 0;
+  top: 0;
+  right: 0;
+  width: 56px;
+  height: 44px;
+  background-color: #ffffff;
+  border: none;
+  background-image: url("../images/close.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+
+.auth-form .field-group {
+  margin: 0;
+  margin-bottom: 16px;
+}
+
+
+.auth-form-user-options {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+}
+
+.auth-form-user-options .control-label {
+  font-weight: 400;
+}
+
+.auth-form .field {
+  width: 328px;
+} */
