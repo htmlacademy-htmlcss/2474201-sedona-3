@@ -1238,58 +1238,71 @@ body {
   text-decoration: none;
 }
 
-/* .modal-container {
+.modal-container {
   position: fixed;
   top: 0;
   left: 0;
-  display: flex;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(242, 242, 242, 0.8);
 }
 
 .modal {
-  position: relative;
   margin: auto;
-  padding: 40px;
-  background-color: #ffffff;
+  padding: 64px 70px;
+  background-color: var(--bg-basic-1);
 }
 
-.modal-auth {
-  width: 360px;
+.modal-search {
+  /* margin-top: 398px; */
+  width: 717px;
+  min-height: 576px;
+  border-radius: 30px;
+  box-shadow: 0 25px 50px 0 rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.modal-content {
+  font-family: inherit;
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  border: 1px solid red;
 }
 
 .modal-close-button {
   position: absolute;
   padding: 0;
   top: 0;
-  right: 0;
-  width: 56px;
-  height: 44px;
-  background-color: #ffffff;
+  right: -18px;
+  background-color: var(--bg-form-el-2);
+  width: 52px;
+  height: 52px;
   border: none;
-  background-image: url("../images/close.svg");
+  border-radius: 50%;
+  background-image: url("../images/icons/close.svg");
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
 }
 
-.auth-form .field-group {
-  margin: 0;
-  margin-bottom: 16px;
+.modal-close-button:hover,
+.modal-close-button:focus-visible {
+  background-color: #e6e6e6;
 }
 
-
-.auth-form-user-options {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 400;
+.modal-close-button:active {
+  opacity: 0.3;
 }
 
-.auth-form-user-options .control-label {
-  font-weight: 400;
+.modal-title {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-h2);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 0 64px;
 }
 
-.auth-form .field {
-  width: 328px;
-} */
+.modal-container-close {
+  display: none;
+}
