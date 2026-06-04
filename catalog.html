@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <title>Гостиницы Седоны</title>
     <link rel="stylesheet" href="styles/styles.css">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
   </head>
 
   <body>
@@ -66,8 +67,8 @@
               <ol class="breadcrumbs-list">
                 <li class="breadcrumbs-item">
                   <a class="breadcrumbs-link" href="index.html">
-                    <svg class="breadcrumbs-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="13" height="15"
-                      viewBox="0 0 13 15">
+                    <svg class="breadcrumbs-icon" aria-hidden="true" focusable="false"
+                      xmlns="http://www.w3.org/2000/svg" width="13" height="15" viewBox="0 0 13 15">
                       <path d="m6.5.5-6 5.8v6.2h12V6.3zm5 11h-10V6.7l5-4.8 5 4.8z" />
                       <path d="M4.5 10.5h1V8h2v2.5h1V7h-4z" />
                     </svg>
@@ -110,7 +111,7 @@
               </fieldset>
 
               <fieldset class="search-form-field-col">
-                <legend class="search-form-legend">Тип жилья:</legend>
+                <legend class="search-form-legend">Тип Жилья:</legend>
                 <ul class="search-form-list list">
                   <li class="search-form-item">
                     <label class="search-form-name">
@@ -139,11 +140,11 @@
                 <legend class="search-form-legend">Стоимость,&nbsp;₽:</legend>
                 <label class="search-form-number price-start">
                   <input class="search-form-number-input price-start" type="number" name="priceStart" value="0">
-                  от
+                  <span class="search-form-number-label">от</span>
                 </label>
                 <label class="search-form-number price-end">
                   <input class="search-form-number-input price-end" type="number" name="priceEnd" value="9000">
-                  до
+                  <span class="search-form-number-label">до</span>
                 </label>
               </fieldset>
 
@@ -173,51 +174,30 @@
             </select>
 
             <ul class="result-view-list" role="group" aria-label="Вариант отображения">
-              <li class="result-view-item view-item-current">
-                <a class="result-view-icon-tile result-view-current" href="catalog.html?view=tile" aria-current="page">
+              <li class="result-view-item">
+                <a class="result-view-icon result-view-current" href="catalog.html?view=tile" aria-current="page">
                   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="14"
-                    fill="none" viewBox="0 0 16 14">
-                    <g fill="#000" clip-path="url(#a)">
-                      <path d="M4 0H0v6h4zM16 0h-4v6h4zM10 0H6v6h4zM4 8H0v6h4zM16 8h-4v6h4zM10 8H6v6h4z" />
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path fill="#fff" d="M0 0h16v14H0z" />
-                      </clipPath>
-                    </defs>
+                    viewBox="0 0 16 14">
+                    <path d="M4 0H0v6h4zM16 0h-4v6h4zM10 0H6v6h4zM4 8H0v6h4zM16 8h-4v6h4zM10 8H6v6h4z" />
                   </svg>
                   <span class="visually-hidden">Показать плиткой</span>
                 </a>
               </li>
               <li class="result-view-item">
-                <a class="result-view-icon-card" href="catalog.html?view=card">
+                <a class="result-view-icon" href="catalog.html?view=card">
                   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="14"
-                    fill="none" viewBox="0 0 16 14">
-                    <g fill="#000" clip-path="url(#a)">
-                      <path d="M16 12H0v2h16zM14 2v6H2V2zm2-2H0v10h16z" />
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path fill="#fff" d="M0 0h16v14H0z" />
-                      </clipPath>
-                    </defs>
+                    viewBox="0 0 16 14">
+                    <path d="M16 12H0v2h16zM14 2v6H2V2zm2-2H0v10h16z" />
                   </svg>
                   <span class="visually-hidden">Показать карточками</span>
                 </a>
               </li>
               <li class="result-view-item">
-                <a class="result-view-icon-list" href="catalog.html?view=list">
+                <a class="result-view-icon" href="catalog.html?view=list">
                   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="16" height="14"
-                    fill="none" viewBox="0 0 16 14">
-                    <g fill="#000" clip-path="url(#a)">
-                      <path
-                        d="M2 0H0v2h2zM16 0H4v2h12zM2 4H0v2h2zM16 4H4v2h12zM2 8H0v2h2zM16 8H4v2h12zM2 12H0v2h2zM16 12H4v2h12z" />
-                    </g>
-                    <defs>
-                      <clipPath id="a">
-                        <path fill="#fff" d="M0 0h16v14H0z" />
-                      </clipPath>
-                    </defs>
+                    viewBox="0 0 16 14">
+                    <path
+                      d="M2 0H0v2h2zM16 0H4v2h12zM2 4H0v2h2zM16 4H4v2h12zM2 8H0v2h2zM16 8H4v2h12zM2 12H0v2h2zM16 12H4v2h12z" />
                   </svg>
                   <span class="visually-hidden">Показать списком</span>
                 </a>
@@ -244,7 +224,7 @@
               </div>
 
               <p class="hotel-card-rating">
-                <span class="hotel-star-icon-four">
+                <span class="hotel-star-icon star-four">
                   <span class="visually-hidden">4 звезды</span>
                 </span>
                 <span class="hotel-user-rating">Рейтинг: 8,5</span>
@@ -269,7 +249,7 @@
               </div>
 
               <p class="hotel-card-rating">
-                <span class="hotel-star-icon-four">
+                <span class="hotel-star-icon star-four">
                   <span class="visually-hidden">4 звезды</span>
                 </span>
                 <span class="hotel-user-rating">Рейтинг: 9,2</span>
@@ -294,7 +274,7 @@
               </div>
 
               <p class="hotel-card-rating">
-                <span class="hotel-star-icon-three">
+                <span class="hotel-star-icon star-three">
                   <span class="visually-hidden">3 звезды</span>
                 </span>
                 <span class="hotel-user-rating">Рейтинг: 6,9</span>
@@ -319,7 +299,7 @@
               </div>
 
               <p class="hotel-card-rating">
-                <span class="hotel-star-icon-two">
+                <span class="hotel-star-icon star-two">
                   <span class="visually-hidden">2 звезды</span>
                 </span>
                 <span class="hotel-user-rating">Рейтинг: 5,0</span>
@@ -332,7 +312,7 @@
 
             <ul class="pagination-list">
               <li class="pagination-item">
-                <a class="pagination-link pagination-current button-big button-disabled " title="Текущая страница">1</a>
+                <a class="pagination-link pagination-current button-big" title="Текущая страница">1</a>
               </li>
               <li class="pagination-item">
                 <a class="pagination-link button-big button-secondary" href="#page">2</a>
@@ -359,7 +339,7 @@
         <section class="subscribe" data-test="subscribe">
           <div class="subscribe-preview">
             <h2 class="preview-title">Подпишитесь на рассылку</h2>
-            <p class="preview-description subscribe-bg-preview">Только полезная информация и никакого
+            <p class="preview-description">Только полезная информация и никакого
               спама,<br>честное
               бойскаутское!</p>
           </div>
