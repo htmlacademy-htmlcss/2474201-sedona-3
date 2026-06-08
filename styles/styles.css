@@ -148,6 +148,7 @@ body {
   background-color: var(--bg-body);
   margin: 0;
   height: 100%;
+  min-width: 1280px;
 }
 
 .visually-hidden {
@@ -167,8 +168,7 @@ body {
   box-shadow: 0 0 15px var(--shadow);
   margin: 0 auto;
   min-height: 100%;
-  max-width: 1200px;
-  width: 100%;
+  width: 1200px;
   display: flex;
   flex-direction: column;
 }
@@ -331,10 +331,6 @@ body {
   fill: var(--icon-fill-basic);
 }
 
-.navigation-user-link:hover,
-.navigation-user-link:focus-visible {
-}
-
 .navigation-user-link:hover .navigation-icon,
 .navigation-user-link:focus-visible .navigation-icon {
   fill: var(--icon-fill-basic-hover);
@@ -383,7 +379,7 @@ body {
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 144px;
+  width: 146px;
   display: flex;
   flex-wrap: wrap;
 }
@@ -454,7 +450,8 @@ body {
   text-align: center;
 }
 
-.main-container {
+.main-container,
+.main-catalog {
   flex-grow: 1;
 }
 
@@ -722,7 +719,7 @@ body {
   font-size: var(--font-size-h1);
   line-height: var(--line-height-h1);
   font-weight: 700;
-  margin: 0 0 8px;
+  margin: 0 0 9px;
 }
 
 /* Хлебные крошки */
@@ -1039,7 +1036,7 @@ body {
   background-color: var(--bg-basic-1);
   border: 2px solid var(--bg-form-el-1);
   border-radius: 4px;
-  padding: 12px 36px 12px 18px;
+  padding: 12px 36px 12px 20px;
   width: 292px;
   flex-shrink: 0;
 
@@ -1069,7 +1066,7 @@ body {
 }
 
 .result-view-icon {
-  border: 3px solid var(--bg-form-el-1);
+  border: 2px solid var(--bg-form-el-1);
   background-color: var(--bg-basic-1);
   border-radius: 4px;
   width: 48px;
@@ -1116,7 +1113,7 @@ body {
   object-fit: cover;
   width: 100%;
   height: auto;
-  margin-bottom: 16px;
+  margin-bottom: 17px;
 }
 
 .hotel-title {
@@ -1195,7 +1192,6 @@ body {
 }
 
 .search-result-pagination::before {
-  /* position: absolute; */
   content: "";
   width: 1060px;
   height: 1px;
@@ -1254,7 +1250,7 @@ body {
 }
 
 .modal-search {
-  /* margin-top: 398px; */
+  margin-top: 396px;
   width: 717px;
   min-height: 576px;
   border-radius: 30px;
@@ -1266,8 +1262,7 @@ body {
   font-family: inherit;
   position: relative;
   width: 100%;
-  min-height: inherit;
-  border: 1px solid red;
+  min-height: 100%;
 }
 
 .modal-close-button {
@@ -1303,6 +1298,239 @@ body {
   margin: 0 0 64px;
 }
 
+.modal-search-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: repeat(4, 48px);
+  gap: 48px 86px;
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+.modal-search-el {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  height: 48px;
+}
+
+.modal-search-label {
+  font-family: inherit;
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-h4);
+  font-weight: 700;
+}
+
+.modal-search-date {
+  width: 440px;
+  height: 100%;
+  padding: 12px 42px 12px 20px;
+  margin-left: auto;
+  font-family: inherit;
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  font-weight: 700;
+  background-color: var(--bg-form-el-2);
+  border-radius: 4px;
+  border-style: none;
+}
+
+.modal-search-label:hover .modal-search-date,
+.modal-search-date:focus-visible {
+  background-color: #e6e6e6;
+}
+
+.server-response {
+  position: absolute;
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+  font-weight: 400;
+  bottom: -25px;
+  left: 137px;
+  padding: 0 20px;
+}
+
+.date-icon {
+  position: absolute;
+  right: 20px;
+  background-image: url("../images/icons/date.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 20px 20px;
+  opacity: 0.3;
+  width: 20px;
+  height: 20px;
+  display: block;
+}
+
+.error-message {
+  color: var(--color-error);
+}
+
+.modal-search-count {
+  width: 31px;
+  height: 100%;
+  padding: 14px 10px;
+  font-family: inherit;
+  font-size: var(--font-size-input);
+  line-height: var(--line-height-input);
+  font-weight: 700;
+  background-color: var(--bg-form-el-2);
+  border-style: none;
+  position: relative;
+
+  /* удалить стрелки Firefox */
+  -moz-appearance: textfield;
+}
+
+/* удалить стрелки Chrome, Safari, Edge (WebKit) */
+.modal-search-count::-webkit-outer-spin-button,
+.modal-search-count::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.minus-icon {
+  margin-left: 46px;
+  width: 40px;
+  border-radius: 4px 0 0 4px;
+}
+
+.plus-icon {
+  width: 40px;
+  border-radius: 0 4px 4px 0;
+}
+
+.minus-icon::before {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 2px;
+  margin: 9px 3px;
+  background-color: var(--icon-fill-basic-active);
+  bottom: 13px;
+  right: 10px;
+}
+
+.plus-icon::before,
+.plus-icon::after {
+  position: absolute;
+  content: "";
+  width: 14px;
+  height: 2px;
+  margin: 9px 3px;
+  background-color: var(--icon-fill-basic-active);
+  bottom: 13px;
+  right: 10px;
+}
+
+.plus-icon::after {
+  transform: rotate(90deg);
+}
+
+.minus-icon:hover,
+.plus-icon:hover,
+.plus-icon:hover,
+.minus-icon:focus-visible,
+.plus-icon:focus-visible,
+.plus-icon:focus-visible {
+  background-color: #e6e6e6;
+}
+
+.minus-icon:hover::before,
+.plus-icon:hover::before,
+.plus-icon:hover::after,
+.minus-icon:focus-visible::before,
+.plus-icon:focus-visible::before,
+.plus-icon:focus-visible::after {
+  background-color: var(--icon-fill-basic);
+}
+
+
+.minus-icon:active::before,
+.plus-icon:active::before,
+.plus-icon:active::after {
+  background-color: var(--icon-fill-basic);
+  opacity: 0.2;
+}
+
+.label-tooltip {
+  position: relative;
+}
+
+.tooltip {
+  margin-left: 12px;
+}
+
+.tooltip-toggle {
+  margin: 0;
+  padding: 3px;
+  display: block;
+  width: 26px;
+  height: 26px;
+  background-color: var(--bg-button-second);
+  border-radius: 50%;
+  border-style: none;
+}
+
+.tooltip-toggle:hover,
+.tooltip-toggle:focus-visible {
+  background-color: var(--bg-button-second-hover);
+}
+
+.tooltip-toggle:active {
+  background-color: var(--bg-button-second-hover);
+}
+
+.tooltip-toggle:active .tooltip-icon {
+  opacity: 0.3;
+}
+
+.tooltip-text {
+  font-family: inherit;
+  font-size: var(--font-size-button-small);
+  line-height: var(--line-height-button-small);
+  background-color: var(--color-second);
+  color: var(--bg-basic-1);
+  border-radius: 10px;
+  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.3);
+  display: block;
+  width: 258px;
+  min-height: 140px;
+  padding: 18px 18px 18px 22px;
+  position: absolute;
+  right: 40px;
+  margin-top: 17px;
+}
+
+.tooltip-text::before {
+  position: absolute;
+  display: block;
+  content: "";
+  width: 18px;
+  height: 18px;
+  top: -7px;
+  right: 50%;
+  background-image: linear-gradient(
+    45deg,
+    var(--color-second) 50%,
+    transparent 50%
+  );
+  transform: translateX(50%) rotate(135deg);
+}
+
+.modal-submit-button {
+  height: 60px;
+  border-radius: 10px;
+}
+
 .modal-container-close {
   display: none;
+}
+
+.tooltip-close {
+  /* display: none; */
 }

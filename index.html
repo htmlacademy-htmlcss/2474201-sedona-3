@@ -76,7 +76,7 @@
           <ul class="advantages-list">
             <li class="advantages-container bg-dark">
               <div class="advantages-item">
-                <h3 class="advantages-title">Настоящий&nbsp;<br>городок</h3>
+                <h3 class="advantages-title">Настоящий&thinsp;<br>городок</h3>
                 <p class="advantages-description">Седона — не аттракцион для<br>туристов, там течёт своя<br>жизнь</p>
               </div>
               <img class="advantages-img" src="images/content/advantages/photo-1.jpg" width="800" height="385"
@@ -99,7 +99,7 @@
                 alt="Каменная тропа Мост дьявола">
               <div class="advantages-item">
                 <h3 class="advantages-title">Там есть<br>мост дьявола</h3>
-                <p class="advantages-description">Да, по нему можно пройти!<br>Если вы осмелитесь,<br>разумеется</p>
+                <p class="advantages-description">Да, по нему можно пройти! <br>Если вы осмелитесь, <br>разумеется</p>
               </div>
             </li>
           </ul>
@@ -115,18 +115,18 @@
           <ul class="infrastructure-list">
             <li class="infrastructure-item icon-house bg-light">
               <h3 class="infrastructure-title">Жильё</h3>
-              <p class="infrastructure-description">Рекомендуем пожить<br>в настоящем мотеле,&nbsp;<br>всё как в кино!
+              <p class="infrastructure-description">Рекомендуем пожить<br> в настоящем мотеле,<br>всё как в кино!
               </p>
             </li>
             <li class="infrastructure-item icon-food">
               <h3 class="infrastructure-title">Еда</h3>
-              <p class="infrastructure-description">Всегда заказывайте<br>топовый фирменный бургер,<br>вы не
+              <p class="infrastructure-description">Всегда заказывайте<br> топовый фирменный бургер,<br>вы не
                 разочаруетесь!
               </p>
             </li>
             <li class="infrastructure-item icon-souvenirs bg-light">
               <h3 class="infrastructure-title">Сувениры</h3>
-              <p class="infrastructure-description">Не только китайского,&nbsp;<br>но и настоящего
+              <p class="infrastructure-description">Не только китайского, <br>но и настоящего
                 местного<br>производства!
               </p>
             </li>
@@ -198,7 +198,7 @@
           </li>
         </ul>
 
-        <a class="contacts-phone" href="tel:+78128121212">+7&nbsp;(812)&nbsp;812&#8209;12&#8209;12</a>
+        <a class="contacts-phone" href="tel:+78128121212">+7 (812) 812&#8209;12&#8209;12</a>
         <a class="contacts-dev-link" href="https://htmlacademy.ru/intensive/htmlcss">
           <svg class="dev-icon" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="115"
             height="33" viewBox="0 0 115 33">
@@ -219,6 +219,70 @@
             <span class="visually-hidden">Закрыть</span>
           </button>
 
+          <form class="modal-search-form" action="https://echo.htmlacademy.ru/" method="get">
+
+            <label class="modal-search-el modal-search-label full-width">
+              <span class="modal-search-label">Дата Заезда:</span>
+              <input class="modal-search-date" type="text" name="trip-start" placeholder="Укажите дату"
+                value="27 апреля 2020" required>
+              <span class="date-icon"></span>
+              <span class="server-response error-message">Мы не можем отправить вас в
+                прошлое.</span>
+            </label>
+
+            <label class="modal-search-el modal-search-label full-width">
+              <span class="modal-search-label">Дата Выезда:</span>
+              <input class="modal-search-date" type="text" name="trip-end" placeholder="Укажите дату"
+                value="1 сентября 2021" required>
+              <span class="date-icon"></span>
+              <span class="server-response success-message">На эти даты есть свободные
+                номера. Пока
+                есть.</span>
+            </label>
+
+            <span class="modal-search-el">
+              <label class="modal-search-label" for="adults-count">Взрослые:</label>
+
+              <button class="modal-search-count minus-icon" type="button">
+                <span class="visually-hidden">Минус</span>
+              </button>
+              <input class="modal-search-count" id="adults-count" type="number" name="adults-count" value="2" required>
+              <button class="modal-search-count plus-icon" type="button">
+                <span class="visually-hidden">Плюс</span>
+              </button>
+            </span>
+
+            <span class="modal-search-el label-tooltip">
+              <label class="modal-search-label label-tooltip" for="children-count">Дети:</label>
+
+              <span class="tooltip">
+                <button class="tooltip-toggle" type="button">
+                  <span class="visually-hidden">Подсказка</span>
+                  <svg class="tooltip-icon" aria-hidden="true" focusable="false" width="20" height="20" fill="none"
+                    viewBox="0 0 20 20">
+                    <path fill="#FFFFFF" fill-rule="evenodd" d="M9 4h2v2H9zm2 12H9V7h2z" clip-rule="evenodd" />
+                  </svg>
+                </button>
+
+                <span class="tooltip-text tooltip-close">Укажите количество детей,&emsp;<br>которые будут с
+                  вами, возраст<br>которых от 6 до
+                  18 лет. Дети&emsp;<br>до 6 лет размещаются&emsp;<br>
+                  бесплатно.</span>
+              </span>
+
+              <button class="modal-search-count minus-icon" type="button">
+                <span class="visually-hidden">Минус</span>
+              </button>
+              <input class="modal-search-count" id="children-count" type="number" name="children-count" value="2"
+                required>
+              <button class="modal-search-count plus-icon" type="button">
+                <span class="visually-hidden">Плюс</span>
+              </button>
+
+            </span>
+
+            <button class="button-big button-secondary modal-submit-button full-width" type="submit">Найти</button>
+          </form>
         </section>
       </div>
     </div>
