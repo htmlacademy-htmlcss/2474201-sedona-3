@@ -15,9 +15,6 @@
 }
 
 :root {
-  /* Шрифты */
-  --font-family: "PT Sans", sans-serif;
-
   /* Текст */
   --font-size-small: 16px;
   --font-size-block: 18px;
@@ -148,7 +145,7 @@ body {
   min-width: 1280px;
 
   /* Типографика */
-  font-family: var(--font-family);
+  font-family: "PT Sans", sans-serif;
   font-size: var(--font-size-basic);
   line-height: var(--line-height-basic);
   color: var(--color-basic);
@@ -193,6 +190,7 @@ body {
 .button-big {
   /* Блочная модель */
   display: inline-block;
+  padding: 8px 16px;
 
   /* Типографика */
   font-family: inherit;
@@ -210,7 +208,6 @@ body {
 
 .button-small {
   /* Блочная модель */
-  padding: 8px 16px;
   min-height: 36px;
 
   /* Типографика */
@@ -220,7 +217,6 @@ body {
 
 .button-big {
   /* Блочная модель */
-  padding: 8px 50px;
   min-height: 52px;
 
   /* Типографика */
@@ -416,8 +412,7 @@ body {
 }
 
 .navigation-btn-link {
-  padding-left: 34px;
-  padding-right: 35px;
+  width: 162px;
   margin: 14px 0 14px 20px;
 }
 
@@ -764,6 +759,10 @@ body {
   margin-bottom: 54px;
 }
 
+.search-button {
+  width: 376px;
+}
+
 /* Блок - Подписка */
 .subscribe {
   padding: 96px 200px 104px;
@@ -825,6 +824,7 @@ body {
 }
 
 .subscribe-button {
+  width: 232px;
   border-radius: 0 4px 4px 0;
 }
 
@@ -1180,6 +1180,7 @@ body {
 }
 
 .field-button {
+  width: 191px;
   padding-top: 56px;
   -webkit-box-pack: end;
   -ms-flex-pack: end;
@@ -1191,9 +1192,9 @@ body {
   gap: 32px;
 }
 
-.search-form-button {
-  padding-left: 50px;
-  padding-right: 50px;
+.search-form-button,
+.search-form-reset {
+  width: 191px;
 }
 
 /* Блок - Результаты поиска */
@@ -1411,7 +1412,7 @@ body {
 .hotel-delete-favorite,
 .hotel-user-rating {
   display: inline-block;
-  padding: 8px;
+  padding: 8px 16px;
   width: 140px;
 }
 
