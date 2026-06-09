@@ -434,7 +434,7 @@ body {
 .contacts-social-list {
   margin: 0;
   padding: 0;
-  width: 146px;
+  width: 144px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -489,7 +489,7 @@ body {
 
 .contacts-dev-link {
   width: 115px;
-  padding: 4px 0 0 3px;
+  padding: 4px 0 0;
 }
 
 .dev-icon {
@@ -545,6 +545,7 @@ body {
 
 .preview-description {
   margin: 0;
+  padding: 0 0 0 2px;
   line-height: var(--line-height-basic);
   color: var(--color-second);
   overflow-wrap: break-word;
@@ -972,10 +973,14 @@ body {
 }
 
 .search-form-legend {
-  margin: 0 0 32px -2px;
+  width: 100%;
+  margin: 0 0 32px;
+  padding: 0;
   font-size: var(--font-size-h4);
   line-height: var(--line-height-h4);
   font-weight: 700;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .search-form-list {
@@ -1005,6 +1010,7 @@ body {
 }
 
 .search-form-field-row {
+  width: 288px;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -1089,8 +1095,9 @@ body {
 }
 
 .search-form-number-input {
-  padding: 12px 40px 12px 20px;
+  height: 48px;
   width: 143px;
+  padding: 12px 40px 12px 20px;
   font-family: inherit;
   font-size: var(--font-size-input);
   line-height: var(--line-height-input);
@@ -1182,9 +1189,6 @@ body {
 .field-button {
   width: 191px;
   padding-top: 56px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
@@ -1253,7 +1257,7 @@ body {
 }
 
 .result-sort {
-  padding: 12px 36px 12px 20px;
+  padding: 12px 36px 12px 19px;
   width: 292px;
   -ms-flex-negative: 0;
   flex-shrink: 0;
